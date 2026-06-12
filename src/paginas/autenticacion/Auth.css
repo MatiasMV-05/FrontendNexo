@@ -1,0 +1,535 @@
+/* ============================================
+   NEXO — Autenticación
+   ============================================ */
+
+/* --- Página completa --- */
+.pagina-auth {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* ============================================
+   PANEL IZQUIERDO — Marca
+   ============================================ */
+.panel-marca {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: var(--space-2xl);
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--custom-violet) 0%, var(--custom-teal) 100%);
+}
+
+@media (min-width: 768px) {
+  .panel-marca {
+    display: flex;
+    width: 50%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .panel-marca {
+    width: 41.67%;
+  }
+}
+
+.patron-marca {
+  position: absolute;
+  inset: 0;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.cabecera-marca {
+  position: relative;
+  z-index: 1;
+  margin-top: var(--space-lg);
+}
+
+.contenedor-logo-marca {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  border-radius: var(--radius-xl);
+  padding: var(--space-md);
+  margin-bottom: var(--space-xl);
+}
+
+.logo-marca {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-signature);
+}
+
+.titulo-marca {
+  font-family: var(--font-display);
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--on-primary);
+  margin-bottom: var(--space-md);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.subtitulo-marca {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 380px;
+  line-height: 1.6;
+}
+
+/* Insignias flotantes */
+.contenedor-insignias {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
+  justify-content: flex-start;
+}
+
+.insignia {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-xl);
+  padding: var(--space-md);
+  color: var(--on-primary);
+  max-width: 340px;
+  box-shadow: var(--shadow-signature);
+}
+
+.insignia:nth-child(1) { margin-left: 0; }
+.insignia:nth-child(2) { margin-left: auto; margin-right: auto; }
+.insignia:nth-child(3) { margin-left: auto; }
+
+.icono-insignia {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-full);
+  padding: var(--space-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.titulo-insignia {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.texto-insignia {
+  font-size: 13px;
+  opacity: 0.8;
+  line-height: 1.4;
+}
+
+.lineas-insignias {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.3;
+}
+
+/* ============================================
+   PANEL DERECHO — Formulario
+   ============================================ */
+.panel-formulario {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2xl) var(--space-lg);
+  background: var(--surface-container-lowest);
+  position: relative;
+  overflow-y: auto;
+}
+
+@media (min-width: 768px) { .panel-formulario { width: 50%; } }
+@media (min-width: 1024px) { .panel-formulario { width: 58.33%; } }
+
+/* Logo móvil */
+.logo-movil {
+  position: absolute;
+  top: var(--space-md);
+  left: var(--space-md);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+@media (min-width: 768px) { .logo-movil { display: none; } }
+
+.texto-logo-movil {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--on-surface);
+}
+
+/* Contenedor del formulario */
+.contenedor-formulario-auth {
+  width: 100%;
+  max-width: 440px;
+  animation: fadeInUp 0.4s ease-out;
+}
+
+/* Cabecera */
+.cabecera-formulario-auth {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+}
+
+.titulo-formulario-auth {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--on-surface);
+  margin-bottom: var(--space-xs);
+  line-height: 1.2;
+}
+
+.descripcion-formulario-auth {
+  font-size: 15px;
+  color: var(--on-surface-variant);
+  line-height: 1.5;
+}
+
+/* ============================================
+   PESTAÑAS
+   ============================================ */
+.pestanas-auth {
+  display: flex;
+  background: var(--surface-container);
+  border-radius: var(--radius-lg);
+  padding: 4px;
+  margin-bottom: var(--space-xl);
+}
+
+.pestana-auth {
+  flex: 1;
+  padding: 10px 16px;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  background: transparent;
+  color: var(--on-surface-variant);
+  font-family: var(--font-body);
+}
+
+.pestana-auth.activa {
+  background: var(--surface-container-lowest);
+  color: var(--on-surface);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.pestana-auth:hover:not(.activa) {
+  color: var(--on-surface);
+}
+
+/* ============================================
+   ALERTA DE ERROR
+   ============================================ */
+.alerta-error-auth {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: 12px 16px;
+  border-radius: var(--radius-lg);
+  background: var(--error-container);
+  color: var(--on-error-container);
+  font-size: 14px;
+  margin-bottom: var(--space-md);
+}
+
+/* ============================================
+   FORMULARIO
+   ============================================ */
+.formulario-auth {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+/* ============================================
+   CAMPO DE ENTRADA — clases en español
+   Usadas por CampoEntrada.tsx
+   ============================================ */
+.contenedor-campo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.etiqueta-campo {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--on-surface);
+  font-family: var(--font-body);
+}
+
+.requerido-campo {
+  color: var(--error);
+  margin-left: 2px;
+}
+
+/* El borde envuelve icono + input juntos */
+.envoltorio-campo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 14px;
+  height: 48px;
+  border: 1.5px solid var(--outline-variant);
+  border-radius: var(--radius-lg);
+  background: var(--surface-container-lowest);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  cursor: text;
+}
+
+.envoltorio-campo:focus-within {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(77, 65, 223, 0.12);
+}
+
+.envoltorio-campo.campo-error {
+  border-color: var(--error);
+}
+
+.envoltorio-campo.campo-error:focus-within {
+  box-shadow: 0 0 0 3px rgba(186, 26, 26, 0.1);
+}
+
+.envoltorio-campo.campo-deshabilitado {
+  opacity: 0.6;
+  background: var(--surface-container);
+  cursor: not-allowed;
+}
+
+.icono-campo {
+  font-size: 20px;
+  color: var(--on-surface-variant);
+  flex-shrink: 0;
+  pointer-events: none;
+  user-select: none;
+  line-height: 1;
+}
+
+.entrada-campo {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 15px;
+  color: var(--on-surface);
+  font-family: var(--font-body);
+  line-height: 1;
+}
+
+.entrada-campo::placeholder {
+  color: var(--outline);
+  opacity: 1;
+}
+
+.entrada-campo:disabled {
+  cursor: not-allowed;
+}
+
+.boton-alternar-campo {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--on-surface-variant);
+  border-radius: var(--radius-sm);
+  transition: color var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.boton-alternar-campo:hover { color: var(--on-surface); }
+
+.boton-alternar-campo .material-symbols-outlined {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.mensaje-error-campo {
+  font-size: 12px;
+  color: var(--error);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  line-height: 1.4;
+}
+
+
+/* ============================================
+   BOTÓN ENVIAR
+   ============================================ */
+.boton-enviar-auth {
+  width: 100%;
+  padding: 14px 24px;
+  border: none;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, var(--custom-violet) 0%, var(--custom-teal) 100%);
+  color: var(--on-primary);
+  font-size: 15px;
+  font-weight: 600;
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  margin-top: var(--space-xs);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+}
+
+.boton-enviar-auth:hover:not(:disabled) {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-1px);
+}
+
+.boton-enviar-auth:active:not(:disabled) { transform: translateY(0); }
+
+.boton-enviar-auth:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ============================================
+   SELECTOR DE ROL CON TARJETAS
+   ============================================ */
+.selector-rol {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+}
+
+.tarjeta-rol {
+  position: relative;
+  cursor: pointer;
+}
+
+.tarjeta-rol input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.contenido-tarjeta-rol {
+  height: 100%;
+  padding: var(--space-lg) var(--space-md);
+  border-radius: var(--radius-xl);
+  border: 2px solid var(--outline-variant);
+  background: var(--surface);
+  transition: all var(--transition-base);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-sm);
+}
+
+.tarjeta-rol input:checked + .contenido-tarjeta-rol {
+  border-color: var(--primary);
+  background: var(--surface-container-low);
+}
+
+.contenido-tarjeta-rol:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-signature);
+}
+
+.icono-tarjeta-rol {
+  background: var(--surface-variant);
+  color: var(--on-surface);
+  border-radius: var(--radius-full);
+  padding: var(--space-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-base);
+}
+
+.icono-tarjeta-rol .material-symbols-outlined {
+  font-size: 24px;
+}
+
+.tarjeta-rol input:checked + .contenido-tarjeta-rol .icono-tarjeta-rol {
+  background: var(--primary);
+  color: var(--on-primary);
+}
+
+.nombre-tarjeta-rol {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--on-surface);
+  font-family: var(--font-display);
+}
+
+.descripcion-tarjeta-rol {
+  font-size: 12px;
+  color: var(--on-surface-variant);
+  line-height: 1.4;
+}
+
+.marca-seleccion-rol {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: var(--primary);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+  font-size: 18px;
+  pointer-events: none;
+}
+
+.tarjeta-rol input:checked ~ .marca-seleccion-rol {
+  opacity: 1;
+}
+
+/* ============================================
+   PIE DE PÁGINA AUTH
+   ============================================ */
+.pie-auth {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-lg);
+  font-size: 14px;
+  color: var(--on-surface-variant);
+}
+
+.pie-auth a {
+  font-weight: 600;
+  color: var(--primary);
+  cursor: pointer;
+  transition: opacity var(--transition-fast);
+}
+
+.pie-auth a:hover { opacity: 0.75; }

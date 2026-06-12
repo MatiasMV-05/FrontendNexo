@@ -1,0 +1,123 @@
+.marketplace-topheader {
+  background-color: #ffffff;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 16px 32px;
+}
+
+.marketplace-topheader-search-container {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex: 1;
+}
+
+.marketplace-topheader-search-box {
+  display: none;
+  align-items: center;
+  background-color: #f8f9fe;
+  border-radius: 8px;
+  padding: 8px 16px;
+  border: 1px solid #c7c4d8;
+  transition: all 0.2s;
+  width: 100%;
+  max-width: 28rem;
+}
+
+@media (min-width: 768px) {
+  .marketplace-topheader-search-box {
+    display: flex;
+  }
+}
+
+.marketplace-topheader-search-box:focus-within {
+  box-shadow: 0 0 0 2px #4d41df;
+  border-color: transparent;
+}
+
+.marketplace-topheader-search-icon {
+  color: #777587;
+  margin-right: 8px;
+  font-size: 14px;
+}
+
+.marketplace-topheader-search-input {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  width: 100%;
+  color: #191c1f;
+}
+
+.marketplace-topheader-search-input::placeholder {
+  color: #c7c4d8;
+}
+
+.marketplace-topheader-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-right: 64px;
+}
+
+.marketplace-topheader-wallet {
+  display: none;
+  align-items: center;
+  gap: 4px;
+  background-color: #dcfce7;
+  border-radius: 9999px;
+  padding: 4px 8px;
+  color: #191c1f;
+}
+
+@media (min-width: 640px) {
+  .marketplace-topheader-wallet {
+    display: flex;
+  }
+}
+
+.marketplace-topheader-wallet-icon {
+  font-size: 14px;
+  color: #16a34a;
+}
+
+.marketplace-topheader-wallet-text {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.marketplace-topheader-cart-btn {
+  position: relative;
+  color: #191c1f;
+  transition: color 0.2s, background-color 0.2s;
+  padding: 4px;
+  border-radius: 9999px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.marketplace-topheader-cart-btn:hover {
+  color: #4d41df;
+  background-color: rgba(225, 226, 231, 0.5);
+}
+
+.marketplace-topheader-cart-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #006b55;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 0 4px;
+  border-radius: 9999px;
+  border: 1px solid #ffffff;
+}

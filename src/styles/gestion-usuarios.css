@@ -1,0 +1,66 @@
+:root{
+  --fondo:#f8f9fe;
+  --superficie:#ffffff;
+  --texto:#191c1f;
+  --primario:#4d41df;
+  --secundario:#28dfb5;
+  --borde:#e1e2e7;
+  --sombra:0 4px 20px rgba(108,99,255,0.08);
+}
+
+body.pagina-gestion{
+  background:var(--fondo);
+  color:var(--texto);
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+
+.barra-lateral{
+  width:260px;
+  position:fixed;
+  left:0;top:0;bottom:0;
+  background:#2e3134;
+  color:var(--superficie);
+  padding:24px 20px;
+}
+
+.contenido-principal{
+  margin-left:260px;
+  min-height:100vh;
+  display:flex;flex-direction:column;
+}
+
+.cabecera{
+  height:64px;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 24px;
+  background:var(--superficie);
+  border-bottom:1px solid var(--borde);
+}
+
+.buscador{max-width:560px;width:100%;}
+.buscador input{width:100%;padding:10px 12px;border-radius:9999px;border:1px solid var(--borde);}
+
+.area-contenido{padding:24px;flex:1;overflow:auto;background:var(--fondo)}
+
+.card-usuarios{background:var(--superficie);border-radius:12px;box-shadow:var(--sombra);border:1px solid rgba(199,196,216,0.3);overflow:hidden}
+.acento-izq{width:6px;background:var(--primario);position:absolute;left:0;top:0;bottom:0}
+
+.tabla{width:100%;border-collapse:collapse}
+.tabla thead th{padding:16px;background:#f2f3f8;text-align:left;border-bottom:1px solid var(--borde)}
+.tabla tbody td{padding:16px;border-bottom:1px solid rgba(0,0,0,0.04)}
+
+.fila-usuario:hover{background:#fbfbfd}
+.avatar{width:40px;height:40px;border-radius:9999px;display:inline-block;object-fit:cover;border:1px solid rgba(0,0,0,0.06)}
+
+.select-rol{padding:6px 10px;border:1px solid var(--borde);border-radius:6px;background:transparent}
+
+.badge-activo{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:9999px;background:rgba(81,249,205,0.12);border:1px solid rgba(81,249,205,0.2);color:#007059}
+.badge-inactivo{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:9999px;background:#f2f3f8;color:#777}
+
+.acciones{display:flex;gap:8px;justify-content:flex-end}
+.boton{padding:8px 12px;border-radius:8px;border:1px solid var(--borde);background:transparent;cursor:pointer}
+.boton-primario{background:var(--primario);color:#fff;border:none}
+.boton-peligro{background:transparent;color:#ba1a1a;border:1px solid rgba(186,26,26,0.08)}
+
+.paginacion{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-top:1px solid rgba(0,0,0,0.04);background:var(--superficie)}
+.pagina-num{width:36px;height:36px;display:inline-grid;place-items:center;border-radius:8px}
