@@ -37,7 +37,7 @@ export default function Home() {
         />
         <meta
           property="og:image"
-          content="/src/assets/Oficina.webp"
+          content="../../assets/Oficina.webp"
         />
         <meta
           property="og:type"
@@ -74,7 +74,7 @@ export default function Home() {
 
             <div className="home-hero-image">
               <img
-                src="/src/assets/E-commers.webp"
+                src="../../assets/E-commers.webp"
                 alt="E-commerce abstract"
               />
             </div>
@@ -136,7 +136,7 @@ export default function Home() {
               {/* Electronics */}
               <div className="home-bento-item home-bento-electronics" onClick={() => navigate('/catalogo')}>
                 <img
-                  src="/src/assets/Compu.webp"
+                  src="../../assets/Compu.webp"
                   alt="Electrónica"
                 />
                 <div className="home-bento-overlay"></div>
@@ -155,7 +155,7 @@ export default function Home() {
                 {/* Home */}
                 <div className="home-bento-item home-bento-home" onClick={() => navigate('/catalogo')}>
                   <img
-                    src="src/assets/Hogar.webp"
+                    src="../../assets/Hogar.webp"
                     alt="Hogar"
                   />
                   <div className="home-bento-overlay-alt"></div>
@@ -168,7 +168,7 @@ export default function Home() {
                 {/* Fashion */}
                 <div className="home-bento-item home-bento-fashion" onClick={() => navigate('/catalogo')}>
                   <img
-                    src="src/assets/Vestimenta.webp"
+                    src="../../assets/Vestimenta.webp"
                     alt="Moda"
                   />
                   <div className="home-bento-overlay-alt"></div>

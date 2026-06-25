@@ -3,6 +3,7 @@ import type { ReactNode } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Auth.css';
 import { MdShield, MdHub, MdSupportAgent, MdArrowBack } from 'react-icons/md';
+import fondoDecorativo from '../../assets/color-turquesa-y-degradado-azul-abstracto-suave-refrescante-fondo-de-pantalla-para-diseño-móvil-inclinado-249541116.webp';
 
 interface PropiedadesPlantillaAuth {
   children: ReactNode;
@@ -20,7 +21,7 @@ export default function PlantillaAuth({ children }: PropiedadesPlantillaAuth) {
         {/* Imagen de fondo o patrón de puntos */}
        
           <img
-            src="src/assets/color-turquesa-y-degradado-azul-abstracto-suave-refrescante-fondo-de-pantalla-para-diseño-móvil-inclinado-249541116.webp"
+            src={fondoDecorativo}
             alt="Imagen decorativa"
             className="patron-marca"
             style={{
