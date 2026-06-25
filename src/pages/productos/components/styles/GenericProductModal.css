@@ -1,0 +1,117 @@
+/* ─── Modal ───────────────────────────────────────────────────────────────── */
+.gp-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(25, 28, 31, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.gp-modal {
+  background: #fff;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 520px;
+  box-shadow: 0 20px 60px rgba(25, 28, 31, 0.2);
+  display: flex;
+  flex-direction: column;
+  max-height: 90vh;
+  overflow: hidden;
+}
+
+.gp-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px 16px;
+  border-bottom: 1px solid #e1e2e7;
+}
+
+.gp-modal-titulo {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #191c1f;
+  margin: 0;
+}
+
+.gp-modal-cerrar {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #777587;
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  border-radius: 6px;
+  transition: background-color 0.15s;
+}
+
+.gp-modal-cerrar:hover { background-color: #f2f3f8; color: #191c1f; }
+
+.gp-modal-cuerpo {
+  padding: 20px 24px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.gp-modal-fila-doble {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.gp-modal-campo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.gp-modal-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #464555;
+}
+
+.gp-modal-input {
+  padding: 9px 14px;
+  border: 1px solid #e1e2e7;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #191c1f;
+  background: #f8f9fe;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.gp-modal-input:focus {
+  border-color: #4d41df;
+  box-shadow: 0 0 0 3px rgba(77, 65, 223, 0.1);
+  background: #fff;
+}
+
+.gp-modal-input.error { border-color: #ba1a1a; }
+
+.gp-modal-error {
+  font-size: 12px;
+  color: #ba1a1a;
+  font-weight: 500;
+}
+
+.gp-modal-pie {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 16px 24px 20px;
+  border-top: 1px solid #e1e2e7;
+}
+
+@media (max-width: 768px) {
+  .gp-modal-fila-doble { grid-template-columns: 1fr; }
+}

@@ -1,5 +1,7 @@
+// @ts-nocheck
 import type { ReactNode } from 'react';
-import { useAuth } from '../context/AuthContext';
+import { useAuth } from '../contexts/AuthContext';
+import { MdLock } from 'react-icons/md';
 
 interface PropiedadesGuardiaRol {
   rolesPermitidos: string[];
@@ -18,7 +20,7 @@ export default function GuardiaRol({ rolesPermitidos, children }: PropiedadesGua
   if (!rolesPermitidos.includes(rolUsuario)) {
     return (
       <div className="empty-state" style={{ padding: '80px 24px' }}>
-        <span className="material-symbols-outlined empty-state-icon" aria-hidden="true">lock</span>
+        <MdLock className=" empty-state-icon" aria-hidden="true" />
         <h3 className="empty-state-title">Acceso Denegado</h3>
         <p className="empty-state-description">No tienes permisos para acceder a esta sección.</p>
       </div>

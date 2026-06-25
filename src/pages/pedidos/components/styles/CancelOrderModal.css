@@ -1,0 +1,72 @@
+/* ─── Modal Cancelar ──────────────────────────────────────────────────────── */
+.mp-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.mp-modal {
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(108, 99, 255, 0.08);
+  max-width: 440px;
+  width: 100%;
+  margin: 0 16px;
+  padding: 24px;
+}
+
+.mp-modal h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 8px;
+  color: #191c1f;
+}
+
+.mp-modal p {
+  font-size: 14px;
+  color: #777587;
+  margin: 0 0 24px;
+}
+
+.mp-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+}
+
+.mp-btn-modal-cancelar {
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  background-color: #f2f3f8;
+  color: #464555;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.mp-btn-modal-cancelar:hover {
+  background-color: #e1e2e7;
+}
+
+.mp-btn-modal-confirmar {
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  background-color: #ba1a1a;
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: opacity 0.2s;
+}
+
+.mp-btn-modal-confirmar:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

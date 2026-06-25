@@ -1,5 +1,5 @@
 import { Navigate } from 'react-router-dom';
-import { useAuth, type RolUsuario } from '../context/AuthContext';
+import { useAuth, type RolUsuario } from '../contexts/AuthContext';
 
 interface Props {
   children: React.ReactNode;
@@ -12,7 +12,7 @@ export default function RutaProtegida({ children, rolesPermitidos }: Props) {
   // Mientras verifica la sesión (por ejemplo, al recargar la página)
   if (cargando) {
     return (
-      <div className="flex items-center justify-center min-h-screen">
+      <div className="ruta-protegida-cargando">
         <div className="spinner">Cargando...</div> {/* Puedes poner un spinner bonito */}
       </div>
     );

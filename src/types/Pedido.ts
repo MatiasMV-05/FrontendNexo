@@ -7,6 +7,7 @@ export interface OrderItemDto {
   unitPrice: number;
   subtotal: number;
   productName?: string;
+  productImageUrl?: string;
 }
 
 export interface OrderResponseDto {
