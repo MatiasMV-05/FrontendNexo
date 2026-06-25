@@ -1,7 +1,6 @@
 // @ts-nocheck
 import { Link, useNavigate } from 'react-router-dom';
 import './styles/Home.css';
-import PublicNavbar from '../../layouts/PublicNavbar';
 import { Helmet } from 'react-helmet-async';
 import { MdSecurity, MdLocalShipping, MdInventory2, MdSupportAgent, MdArrowForward } from 'react-icons/md';
 import ecommers from '../../assets/E-commers.webp';
@@ -13,7 +12,7 @@ export default function Home() {
   const navigate = useNavigate();
 
   return (
-    <div>
+    <>
       <Helmet>
         <title>Inicio - Mi Aplicación</title>
         <meta
@@ -237,6 +236,6 @@ export default function Home() {
         </div>
       </footer>
     </div>
-    </div>
+    </>
   );
 }
