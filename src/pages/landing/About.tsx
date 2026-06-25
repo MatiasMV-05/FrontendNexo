@@ -59,7 +59,7 @@ export default function About() {
 
           <div className="about-hero-image-container nexo-shadow border-primary">
             <img
-              src="/src/assets/Oficina.jpg"
+              src="../../assets/Oficina.jpg"
               alt="Corporate office environment"
               className="about-hero-image"
             />
