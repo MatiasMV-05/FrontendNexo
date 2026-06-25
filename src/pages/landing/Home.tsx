@@ -4,6 +4,10 @@ import './styles/Home.css';
 import PublicNavbar from '../../layouts/PublicNavbar';
 import { Helmet } from 'react-helmet-async';
 import { MdSecurity, MdLocalShipping, MdInventory2, MdSupportAgent, MdArrowForward } from 'react-icons/md';
+import ecommers from '../../assets/E-commers.webp';
+import compu from '../../assets/Compu.webp';
+import hogar from '../../assets/Hogar.webp';
+import vestimenta from '../../assets/Vestimenta.webp';
 
 export default function Home() {
   const navigate = useNavigate();
@@ -74,7 +78,7 @@ export default function Home() {
 
             <div className="home-hero-image">
               <img
-                src="../../assets/E-commers.webp"
+                src={ecommers}
                 alt="E-commerce abstract"
               />
             </div>
@@ -136,7 +140,7 @@ export default function Home() {
               {/* Electronics */}
               <div className="home-bento-item home-bento-electronics" onClick={() => navigate('/catalogo')}>
                 <img
-                  src="../../assets/Compu.webp"
+                  src={compu}
                   alt="Electrónica"
                 />
                 <div className="home-bento-overlay"></div>
@@ -155,7 +159,7 @@ export default function Home() {
                 {/* Home */}
                 <div className="home-bento-item home-bento-home" onClick={() => navigate('/catalogo')}>
                   <img
-                    src="../../assets/Hogar.webp"
+                    src={hogar}
                     alt="Hogar"
                   />
                   <div className="home-bento-overlay-alt"></div>
@@ -168,7 +172,7 @@ export default function Home() {
                 {/* Fashion */}
                 <div className="home-bento-item home-bento-fashion" onClick={() => navigate('/catalogo')}>
                   <img
-                    src="../../assets/Vestimenta.webp"
+                    src={vestimenta}
                     alt="Moda"
                   />
                   <div className="home-bento-overlay-alt"></div>

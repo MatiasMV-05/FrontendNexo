@@ -1,9 +1,11 @@
 // @ts-nocheck
 import { Link, useLocation } from 'react-router-dom';
-import './styles/Home.css'; // Reusing Home styles for header/footer
-import './styles/About.css'; // Specific styles for About page
+import './styles/Home.css'; 
+import './styles/About.css'; 
 import { Helmet } from 'react-helmet-async';
 import { MdRocketLaunch, MdVisibility } from 'react-icons/md';
+import oficina from '../../assets/Oficina.jpg';
+
 
 export default function About() {
   const location = useLocation();
@@ -59,7 +61,7 @@ export default function About() {
 
           <div className="about-hero-image-container nexo-shadow border-primary">
             <img
-              src="../../assets/Oficina.jpg"
+              src={oficina}
               alt="Corporate office environment"
               className="about-hero-image"
             />
