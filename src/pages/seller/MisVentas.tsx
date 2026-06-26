@@ -190,7 +190,6 @@ export default function MisVentas() {
               <div className="sales-table-indicator"></div>
               <div className="sales-table-header">
                 <h3 className="sales-table-title">Ventas Recientes</h3>
-                <button className="sales-table-view-all">View All</button>
               </div>
               
               {loading ? (
