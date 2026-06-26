@@ -128,7 +128,7 @@
 /* Main Layout Grid */
 .mis-ventas-layout-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 2fr 1fr;
   gap: 24px;
 }
 
@@ -455,6 +455,7 @@
   text-align: center;
 }
 
+/* Tablet */
 @media (max-width: 1023px) {
   .mis-ventas-header {
     flex-direction: column;
@@ -468,6 +469,10 @@
 
   .mis-ventas-summary-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .mis-ventas-layout-grid {
+    grid-template-columns: 1fr;
   }
 }
 
