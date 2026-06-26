@@ -114,34 +114,7 @@ export default function PlantillaAuth({ children }: PropiedadesPlantillaAuth) {
 
       {/* PANEL DERECHO — Formulario */}
       <main className="panel-formulario" style={{ position: 'relative' }}>
-        
-        {/* Botón Volver */}
-        <button 
-          onClick={() => navigate('/')} 
-          style={{ 
-            position: 'absolute', 
-            top: '24px', 
-            left: '24px', 
-            background: 'none', 
-            border: 'none', 
-            cursor: 'pointer', 
-            display: 'flex', 
-            alignItems: 'center', 
-            gap: '6px', 
-            color: '#464555', 
-            fontWeight: 600,
-            fontSize: '14px',
-            fontFamily: 'var(--font-body)',
-            padding: '8px',
-            borderRadius: '8px',
-            transition: 'background-color 0.2s'
-          }}
-          onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#f2f3f8'}
-          onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
-        >
-          <MdArrowBack style={{ fontSize: '20px' }} />
-          Volver
-        </button>
+
 
         {/* Logo móvil */}
         <div className="logo-movil" style={{ marginTop: '24px' }}>
